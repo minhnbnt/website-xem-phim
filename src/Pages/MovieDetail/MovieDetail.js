@@ -8,9 +8,9 @@ import SpecialVideo from '../../components/Video/SpecialVideo/SpecialVideo.js'
 import Video from '../../components/Video/Video/Video.js'
 import Image from '../../components/Image/Image.js'
 
-const api_key = process.env.REACT_APP_API_KEY;
-const access_token = process.env.REACT_APP_API_READ_ACCESS_TOKEN;
-const image_base_url = process.env.REACT_APP_TMDB_BASE_IMAGE_URL;
+const api_key = import.meta.env.VITE_APP_API_KEY;
+const access_token = import.meta.env.VITE_APP_API_READ_ACCESS_TOKEN;
+const image_base_url = import.meta.env.VITE_APP_TMDB_BASE_IMAGE_URL;
 const tvshow_detail_api = 'https://api.themoviedb.org/3/tv/{series_id}'
 const movie_detail_api = 'https://api.themoviedb.org/3/movie/{movie_id}'
 const randomAvatarColor = [

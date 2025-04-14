@@ -7,13 +7,13 @@ import BookMarkIcon from "../../components/BookMarkIcon/BookMarkIcon.js";
 import HeartIcon from "../../components/HeartIcon/HeartIcon.js";
 import { useNotification } from "../../context/NotificationContext/NotificationContext.js";
 
-const api_key = process.env.REACT_APP_API_KEY;
-const access_token = process.env.REACT_APP_API_READ_ACCESS_TOKEN;
+const api_key = import.meta.env.VITE_APP_API_KEY;
+const access_token = import.meta.env.VITE_APP_API_READ_ACCESS_TOKEN;
 
-const tmdb_image_base_url = process.env.REACT_APP_TMDB_BASE_IMAGE_URL;
-const tmdb_base_url = process.env.REACT_APP_TMDB_BASE_URL;
+const tmdb_image_base_url = import.meta.env.VITE_APP_TMDB_BASE_IMAGE_URL;
+const tmdb_base_url = import.meta.env.VITE_APP_TMDB_BASE_URL;
 
-const trendingListAll = `${process.env.REACT_APP_TMDB_BASE_URL}3/trending/all/{time_window}`;
+const trendingListAll = `${import.meta.env.VITE_APP_TMDB_BASE_URL}3/trending/all/{time_window}`;
 const backgroundImageWidth = 58
 const slideShowImageWidth = 120
 const gapBetweenImages = 20

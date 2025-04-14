@@ -6,7 +6,7 @@ import SpinAnimation from '../../components/LoadingAnimation/SpinAnimation/SpinA
 import { useNotification } from "../../context/NotificationContext/NotificationContext";
 import InputBox from "../../components/InputBox/InputBox";
 
-const website_base_url = process.env.REACT_APP_WEBSITE_BASE_URL
+const website_base_url = import.meta.env.VITE_APP_WEBSITE_BASE_URL
 
 function Login() {
     const emailInput = useRef(null)

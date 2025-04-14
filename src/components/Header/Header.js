@@ -1,7 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import '../../index.css';
-import { AuthContext } from '../../context/UserDataContext';
 import decodeJWT from '../../utils/decodeJWT';
 import styles from './Header.module.css';
 import logo from '../../assets/Logo.png';
@@ -29,7 +28,7 @@ function Header({ onSearching, onReset, additionalHeaderStyles }) {
         }
     }
     const handleLogout = async () => {
-        const res = await fetch(`${process.env.REACT_APP_WEBSITE_BASE_URL}identity/auth/logout`, {
+        const res = await fetch(`${import.meta.env.VITE_APP_WEBSITE_BASE_URL}identity/auth/logout`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -49,7 +48,7 @@ function Header({ onSearching, onReset, additionalHeaderStyles }) {
     useEffect(() => {
         const fetchAvatar = async () => {
             try {
-                const res = await fetch(`${process.env.REACT_APP_WEBSITE_BASE_URL}identity/api/users/${decodedToken.userId}/get-avatar`, {
+                const res = await fetch(`${import.meta.env.VITE_APP_WEBSITE_BASE_URL}identity/api/users/${decodedToken.userId}/get-avatar`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${jwtToken}`

@@ -16,11 +16,11 @@ import Movie from "../../components/Movie/Movie.js";
 import { sideBarMenu, cinemaMap } from "../../constants/menu.js";
 import { urlTemplates } from "../../constants/TmdbUrls.js";
 
-const api_key = process.env.REACT_APP_API_KEY;
-const access_token = process.env.REACT_APP_API_READ_ACCESS_TOKEN;
+const api_key = import.meta.env.VITE_APP_API_KEY;
+const access_token = import.meta.env.VITE_APP_API_READ_ACCESS_TOKEN;
 
-const image_base_url = process.env.REACT_APP_TMDB_BASE_IMAGE_URL;
-const tmdb_base_url = process.env.REACT_APP_TMDB_BASE_URL;
+const image_base_url = import.meta.env.VITE_APP_TMDB_BASE_IMAGE_URL;
+const tmdb_base_url = import.meta.env.VITE_APP_TMDB_BASE_URL;
 const videos_api = `${tmdb_base_url}3/movie/{movie_id}/videos`;
 const popular_movies_api = `${tmdb_base_url}3/movie/popular`;
 const now_playing_movies_api = `${tmdb_base_url}3/movie/now_playing`;

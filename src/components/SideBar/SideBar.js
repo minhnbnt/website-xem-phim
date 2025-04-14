@@ -5,9 +5,9 @@ import { sideBarMenu, trendingMenu, movieMenu, tvshowMenu, cinemaMap, linkIcon }
 
 //https://api.themoviedb.org/3/trending/person/{time_window}
 //https://api.themoviedb.org/3/trending/tv/{time_window}
-const access_token = process.env.REACT_APP_API_READ_ACCESS_TOKEN
-const api_key = process.env.REACT_APP_API_KEY
-const image_base_url = process.env.REACT_APP_TMDB_BASE_IMAGE_URL;
+const access_token = import.meta.env.VITE_APP_API_READ_ACCESS_TOKEN
+const api_key = import.meta.env.VITE_APP_API_KEY
+const image_base_url = import.meta.env.VITE_APP_TMDB_BASE_IMAGE_URL;
 
 function SideBar({ onActiveMenuUpdate }) {
     const [activeMenu, setActiveMenu] = useState(sideBarMenu[0])

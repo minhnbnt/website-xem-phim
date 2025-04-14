@@ -26,7 +26,7 @@ const UserDetail = () => {
   const handleUpload = () => {
     try {
       const fetchUserInfo = async () => {
-        const res = await fetch(`${process.env.REACT_APP_WEBSITE_BASE_URL}identity/api/users/${user.id}/upload`, {
+        const res = await fetch(`${import.meta.env.VITE_APP_WEBSITE_BASE_URL}identity/api/users/${user.id}/upload`, {
           method: "POST",
           headers: {
             'Content-Type': '',
@@ -53,7 +53,7 @@ const UserDetail = () => {
   useEffect(() => {
     try {
       const fetchUserInfo = async () => {
-        const res = await fetch(`${process.env.REACT_APP_WEBSITE_BASE_URL}identity/users/myinfo`, {
+        const res = await fetch(`${import.meta.env.VITE_APP_WEBSITE_BASE_URL}identity/users/myinfo`, {
           method: "GET",
           headers: {
             'Authorization': `Bearer ${jwtToken}`
@@ -77,7 +77,7 @@ const UserDetail = () => {
 
   const authenticatePassword = (e) => {
     const fetchPassword = async () => {
-      const res = await fetch(`${process.env.REACT_APP_WEBSITE_BASE_URL}identity/auth/authenticate-password`, {
+      const res = await fetch(`${import.meta.env.VITE_APP_WEBSITE_BASE_URL}identity/auth/authenticate-password`, {
         method: "POST",
         headers: {
           'Authorization': `Bearer ${jwtToken}`,
@@ -106,7 +106,7 @@ const UserDetail = () => {
     const changePassword = async () => {
       setLoading(true)
       try {
-        const res = await fetch(`${process.env.REACT_APP_WEBSITE_BASE_URL}identity/users/update-password/${user.id}`, {
+        const res = await fetch(`${import.meta.env.VITE_APP_WEBSITE_BASE_URL}identity/users/update-password/${user.id}`, {
           method: "POST",
           headers: {
             'Content-Type': 'application/json'
